@@ -8,8 +8,9 @@ import {
   Tabs 
 } from '@mui/material'
 import { useState } from 'react'
-import PreviewPage from './components/PreviewPage'
-import QueryEditPage from './components/QueryEditPage'
+import PreviewPage from './components/Read/PreviewPage'
+import EditPage from './components/Edit/EditPage'
+import CreatePage from './components/Create/CreatePage'
 
 function TabPanel({ children, value, index }) {
   return (
@@ -42,7 +43,7 @@ function App() {
           </Typography>
         </CardContent>
       </Card>
-      
+
       <Box sx={{ borderBottom: 1, borderColor: 'divider'}}>
         <Tabs value={tabIndex} onChange={handleTabChange} aria-label="SalesOrder tabs">
           <Tab label="預覽" />
@@ -56,11 +57,11 @@ function App() {
       </TabPanel>
 
       <TabPanel value={tabIndex} index={1}>
-        <QueryEditPage />
+        <EditPage />
       </TabPanel>
 
       <TabPanel value={tabIndex} index={2}>
-        {/* 未來新增頁面 */}
+        <CreatePage />
       </TabPanel>
     </Container>
   )

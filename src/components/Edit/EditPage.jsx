@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Paper, Button, Box, TextField } from '@mui/material';
 import { DataGrid } from '@mui/x-data-grid';
-import { getSalesOrderById } from '../api/salesorders';
-import EditPage from './EditPage';
+import { getSalesOrderById } from '../../api/salesorders';
+import EditHeaderPage from './EditHeaderPage';
 import Alert from '@mui/material/Alert';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
@@ -20,7 +20,7 @@ const columns = [
   { field: 'RequestedDeliveryDate', headerName: 'RequestedDeliveryDate', width: 200 },
 ];
 
-export default function QueryEditPage() {
+export default function EditPage() {
   const [query, setQuery] = useState('');
   const [salesOrders, setSalesOrders] = useState([]);
   const [selectedRow, setSelectedRow] = useState(null)
@@ -46,7 +46,7 @@ export default function QueryEditPage() {
   };
 
   return editing && selectedRow ? (
-    <EditPage
+    <EditHeaderPage
       row={selectedRow}
       onClose={() => {
         setEditing(false);

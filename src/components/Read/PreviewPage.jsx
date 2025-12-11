@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Paper } from '@mui/material'
 import { DataGrid } from '@mui/x-data-grid'
-import { getSalesOrders, getSalesOrdersCount } from '../api/salesorders'
+import { getSalesOrders, getSalesOrdersCount } from '../../api/salesorders'
 
 export default function PreviewPage() {
   const [salesOrders, setSalesOrders] = useState([])

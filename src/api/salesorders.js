@@ -25,3 +25,9 @@ export const updateSalesOrder = async (id, body) => {
   const res = await axios.patch(`${BASE_URL}?id=${id}`, body)
   return res.data
 }
+
+//模糊搜尋SalesOrder
+export const createSalesOrder = async (body) => {
+  const response = await axios.post(BASE_URL, body)
+  return response.data
+}

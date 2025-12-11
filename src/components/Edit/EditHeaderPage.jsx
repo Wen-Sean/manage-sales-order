@@ -1,9 +1,8 @@
 import { use, useState } from 'react';
 import { Box, Paper, TextField, Button } from '@mui/material';
-import { updateSalesOrder } from '../api/salesorders';
-import Alert from '@mui/material/Alert';
+import { updateSalesOrder } from '../../api/salesorders';
 
-export default function EditPage({ row, onClose, onUpdated, status }) {
+export default function EditHeaderPage({ row, onClose, onUpdated, status }) {
   const id = row.SalesOrder;
   const [formData, setFormData] = useState(row);
   const [modifiedFields, setModifiedFields] = useState({}); // 追蹤修改過的欄位
